@@ -1,4 +1,4 @@
-import React from 'react'
+import path from 'src/constants/path'
 import { Navigate, Outlet, useRoutes } from 'react-router-dom'
 import RegisterLayout from './layouts/RegisterLayout'
 import Login from './pages/Login'
@@ -26,7 +26,7 @@ export default function useRouterElements() {
       element: <RejectedRoute />,
       children: [
         {
-          path: 'login',
+          path: path.login,
           element: (
             <RegisterLayout>
               <Login />
@@ -34,7 +34,7 @@ export default function useRouterElements() {
           )
         },
         {
-          path: 'register',
+          path: path.register,
           element: (
             <RegisterLayout>
               <Register />
@@ -48,7 +48,7 @@ export default function useRouterElements() {
       element: <ProtectedRoute />,
       children: [
         {
-          path: 'profile',
+          path: path.profile,
           element: (
             <MainLayout>
               <Profile />
